@@ -74,10 +74,7 @@ class DownloadFragment : Fragment() {
 
                 // /storage/emulated/0/Android/data/com.vvitt.flowpractice/files/pic_vvitt.JPG
                 // /storage/emulated/0/FLOW_PIC/pic_vvitt_1684771452003.jpg
-                Log.e("vvitt", "onActivityCreated file: $file , file path: ${file.path}" )
                 val urlIndex = Random.nextInt(8)
-                Log.e("vvitt", "onActivityCreated urlIndex: $urlIndex" )
-
                 DownloadManager.download(urlList[urlIndex],file).collect { status->
                     when(status){
                         is DownloadStatus.Progress ->{
