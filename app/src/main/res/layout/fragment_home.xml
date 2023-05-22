@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <Button
+        android:id="@+id/btn_flow_and_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="Flow and Download"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_flow_and_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="Flow and Room"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_download"/>
+
+    <Button
+        android:id="@+id/btn_flow_and_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="Flow and Retrofit"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_room"/>
+
+
+    <Button
+        android:id="@+id/btn_state_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="StateFlow"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_retrofit"/>
+
+    <Button
+        android:id="@+id/btn_shared_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="SharedFlow"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        app:layout_constraintTop_toBottomOf="@id/btn_state_flow"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
