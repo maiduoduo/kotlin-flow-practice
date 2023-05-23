@@ -44,6 +44,14 @@ class HomeFragment : Fragment() {
             btnFlowAndRetrofit.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_musicNetFragment)
             }
+
+            btnStateFlow.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_stateFlowFragment)
+            }
+
+            btnSharedFlow.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_sharedFlowFragment)
+            }
         }
     }
 

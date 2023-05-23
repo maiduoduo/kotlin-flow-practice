@@ -19,6 +19,12 @@
         <action
             android:id="@+id/action_homeFragment_to_musicNetFragment"
             app:destination="@id/musicNetFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_stateFlowFragment"
+            app:destination="@id/stateFlowFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sharedFlowFragment"
+            app:destination="@id/sharedFlowFragment" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
@@ -35,4 +41,14 @@
         android:name="com.vvitt.flowpractice.ui.fragment.MusicNetFragment"
         android:label="fragment_music_net"
         tools:layout="@layout/fragment_music_net" />
+    <fragment
+        android:id="@+id/stateFlowFragment"
+        android:name="com.vvitt.flowpractice.ui.fragment.StateFlowFragment"
+        android:label="fragment_state_flow"
+        tools:layout="@layout/fragment_state_flow" />
+    <fragment
+        android:id="@+id/sharedFlowFragment"
+        android:name="com.vvitt.flowpractice.ui.fragment.SharedFlowFragment"
+        android:label="fragment_shared_flow"
+        tools:layout="@layout/fragment_shared_flow" />
 </navigation>
