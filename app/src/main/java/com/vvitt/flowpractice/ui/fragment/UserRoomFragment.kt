@@ -69,15 +69,9 @@ class UserRoomFragment : Fragment() {
                 recyclerview.apply {
                     layoutManager = LinearLayoutManager(it)
                     //这里用线性宫格显示 类似于gridview
-                    //setLayoutManager(GridLayoutManager(this, 2))
-
+                    //layoutManager(GridLayoutManager(this, 2))
                     //这里用线性宫格显示 类似于瀑布流
-                    /* setLayoutManager(
-                         StaggeredGridLayoutManager(
-                             2,
-                             OrientationHelper.VERTICAL
-                         )
-                     )*/
+                    /* layoutManager(StaggeredGridLayoutManager(2,OrientationHelper.VERTICAL))*/
                     this.adapter = adapter
                 }
             }

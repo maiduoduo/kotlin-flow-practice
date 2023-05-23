@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_userRoomFragment"
             app:destination="@id/userRoomFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_musicNetFragment"
+            app:destination="@id/musicNetFragment" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
@@ -27,4 +30,9 @@
         android:name="com.vvitt.flowpractice.ui.fragment.UserRoomFragment"
         android:label="fragment_user_room"
         tools:layout="@layout/fragment_user_room" />
+    <fragment
+        android:id="@+id/musicNetFragment"
+        android:name="com.vvitt.flowpractice.ui.fragment.MusicNetFragment"
+        android:label="fragment_music_net"
+        tools:layout="@layout/fragment_music_net" />
 </navigation>
