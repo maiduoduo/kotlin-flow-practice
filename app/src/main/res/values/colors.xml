@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="button_tint">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#E5DCDC</color>
 
     <color name="colorPrimary">#779121</color>
     <color name="colorPrimaryDark">#FF03DAC5</color>

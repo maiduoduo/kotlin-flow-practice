@@ -24,11 +24,13 @@ import kotlin.random.Random
 
 
 /**
- * A simple [Fragment] subclass.
- * Use the [DownloadFragment.newInstance] factory method to
- * create an instance of this fragment.
- * picurl= http://p3.music.126.net/vtnI8JpimWnZSzkXdmIB3w==/109951168558210782.jpg
- */
+ * @ClassName DownloadManager
+ * @author please call me police uncel
+ * @since 2023/5/22.
+ * @email 110
+ * @Version: V1.0.0
+ * @desciption flow Download 文件下载 实践
+ **/
 class DownloadFragment : Fragment() {
 
     val URL = "http://p3.music.126.net/vtnI8JpimWnZSzkXdmIB3w==/109951168558210782.jpg"

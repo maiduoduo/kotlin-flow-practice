@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment_to_downloadFragment"
             app:destination="@id/downloadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userRoomFragment"
+            app:destination="@id/userRoomFragment" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
         android:name="com.vvitt.flowpractice.ui.fragment.DownloadFragment"
         android:label="fragment_download"
         tools:layout="@layout/fragment_download" />
+    <fragment
+        android:id="@+id/userRoomFragment"
+        android:name="com.vvitt.flowpractice.ui.fragment.UserRoomFragment"
+        android:label="fragment_user_room"
+        tools:layout="@layout/fragment_user_room" />
 </navigation>

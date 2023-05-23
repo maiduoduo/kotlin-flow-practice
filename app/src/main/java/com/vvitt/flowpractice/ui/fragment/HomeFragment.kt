@@ -35,8 +35,11 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         mBinding.apply {
             btnFlowAndDownload.setOnClickListener {
-
                 findNavController().navigate(R.id.action_homeFragment_to_downloadFragment)
+            }
+
+            btnFlowAndRoom.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_userRoomFragment)
             }
         }
     }
