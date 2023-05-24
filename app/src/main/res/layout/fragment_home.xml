@@ -53,6 +53,16 @@
         android:backgroundTint="@color/design_default_color_secondary_variant"
         app:layout_constraintTop_toBottomOf="@id/btn_state_flow"/>
 
+    <Button
+        android:id="@+id/btn_paging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:textColor="@color/white"
+        android:text="Jetpack Paging"
+        android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintTop_toBottomOf="@id/btn_shared_flow"/>
+
 
 
 

@@ -37,6 +37,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    //databinding
+    dataBinding{
+        enabled = true
+    }
+
     compileSdkVersion 31
     buildToolsVersion '31'
 }
@@ -92,6 +97,12 @@ dependencies {
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.4.1"
+    //paging3
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha03"
+
+    //图片
+    implementation "com.squareup.picasso:picasso:2.71828"
 
 
 

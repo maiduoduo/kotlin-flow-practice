@@ -32,3 +32,27 @@
 > **stateFlow** : 是一个状态器式 `可观察数据流`，可以向其收集器发出当前状态更新和新状态更新。
 > 还可通过其 value属性读取当前状态值。
 > 
+
+### Flow 与 jetpack paging3
+> 接口示例
+> 
+> https://www.kuaikanmanhua.com/v1/search/topic?q=任翔&f=3&size=18
+> 
+> http://m.kuaikanmanhua.com/search/mini/hot_word?&page=1&size=10
+> 
+> http://m.kuaikanmanhua.com/search/mini/hot_word?&page=2&size=10
+> 
+> http://m.kuaikanmanhua.com/search/mini/hot_word?&page=3&size=10
+> 
+> http://m.kuaikanmanhua.com/search/mini/hot_word?&page=4&size=10
+
+- paging3
+> 加载数据的流程
+> 
+![](pic/flow_paging3_start_con.png)
+
+> 分页逻辑
+>
+![](pic/flow_page_more.png)
+
+

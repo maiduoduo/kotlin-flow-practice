@@ -52,6 +52,10 @@ class HomeFragment : Fragment() {
             btnSharedFlow.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_sharedFlowFragment)
             }
+
+            btnPaging.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_pagingFragment)
+            }
         }
     }
 

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_sharedFlowFragment"
             app:destination="@id/sharedFlowFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pagingFragment"
+            app:destination="@id/pagingFragment" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
@@ -51,4 +54,9 @@
         android:name="com.vvitt.flowpractice.ui.fragment.SharedFlowFragment"
         android:label="fragment_shared_flow"
         tools:layout="@layout/fragment_shared_flow" />
+    <fragment
+        android:id="@+id/pagingFragment"
+        android:name="com.vvitt.flowpractice.ui.fragment.PagingFragment"
+        android:label="fragment_paging"
+        tools:layout="@layout/fragment_paging" />
 </navigation>
