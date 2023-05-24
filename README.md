@@ -34,7 +34,10 @@
 > 
 
 ### Flow 与 jetpack paging3
-> 接口示例
+
+![](pic/flow_paging3_mulu.png)
+
+- 接口示例
 > 
 > https://www.kuaikanmanhua.com/v1/search/topic?q=任翔&f=3&size=18
 > 
@@ -46,13 +49,62 @@
 > 
 > http://m.kuaikanmanhua.com/search/mini/hot_word?&page=4&size=10
 
-- paging3
-> 加载数据的流程
+#### paging3
+  
+- 加载数据的流程
 > 
 ![](pic/flow_paging3_start_con.png)
 
-> 分页逻辑
+- 分页逻辑
 >
 ![](pic/flow_page_more.png)
+
+- 上游数据的缓存：屏幕旋转后，都会重新加载数据，解决此种情况
+
+`.cachedIn(viewModelScope)`
+
+> viewmodel, 放到属性上面去保存
+> 
+> 优化后，同时不会有内存泄漏的风险
+> 
+> **优化前：**
+> 
+```kotlin
+fun loadMovie() : Flow<PagingData<Movie>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = PAGING_PAGE_SIZE,
+                // 滑动到 item位置加载更多
+                prefetchDistance = 1,
+                initialLoadSize= PAGING_INITIAL_PAGE_SIZE
+            ),
+            pagingSourceFactory = {MoviePagingSource()}
+        ).flow
+    }
+
+```
+
+
+> > **优化后：**
+```kotlin
+ private val movies by lazy {
+        Pager(
+            config = PagingConfig(
+                pageSize = PAGING_PAGE_SIZE,
+                // 滑动到 item位置加载更多
+                prefetchDistance = 1,
+                initialLoadSize= PAGING_INITIAL_PAGE_SIZE
+            ),
+            pagingSourceFactory = {MoviePagingSource()}
+        ).flow.cachedIn(viewModelScope)
+    }
+    
+    fun loadMovie() : Flow<PagingData<Movie>> = movies
+
+```
+
+
+
+
 
 

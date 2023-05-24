@@ -2,10 +2,13 @@ package com.vvitt.flowpractice.paging3
 
 import android.util.Log
 import androidx.paging.PagingSource
+import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_INITIAL_PAGE_SIZE
+import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_PAGE_SIZE
 import com.vvitt.flowpractice.model.Movie
 import com.vvitt.flowpractice.net.MovieApi
 import com.vvitt.flowpractice.net.RetrofitClient2
-import java.lang.Error
+import kotlinx.coroutines.delay
+
 
 /**
  * @ClassName MoviePagingSource
@@ -27,20 +30,33 @@ class MoviePagingSource : PagingSource<Int,Movie>(){
     //1,3
     //2,4
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
-        val currentPage = params.key ?: 1
-        //TODO: 这里写死的， params.loadSize 运行无效
-        val pageSize = 8
-//        val pageSize = params.loadSize
-        Log.e("vvitt", "loadSize:  $pageSize" )
+        //为了展示上拉刷新（加载更多）效果
+        delay(1200)
+        val currentPage = params.key?: 1
+        val pageSize = params.loadSize
         val movies = RetrofitClient2.createApi(MovieApi::class.java)
             .getMovies(currentPage,pageSize)
 
-        val prevKey : Int? = null
-        val nextKey : Int? = null
+        var prevKey : Int? = null
+        var nextKey : Int? = null
+        var totalpage = (movies.total)/(pageSize)
+        val realPageSize = PAGING_PAGE_SIZE
+        val initialLoadSize = PAGING_INITIAL_PAGE_SIZE
 
+        Log.e("vvitt", "currentpage: $currentPage  ,  totalpage:  ${totalpage}, pageSize : $pageSize" )
+//        prevKey = if (currentPage == 1)null else currentPage -1
+//        nextKey = if (currentPage <  (movies.total)/(pageSize)) currentPage+1 else null
 
-        prevKey == if (currentPage == 1)null else currentPage -1
-        nextKey == if (currentPage <  ((movies.total)/(pageSize))) currentPage+1 else null
+        //以防数据错乱
+        if (currentPage == 1){
+            prevKey = null
+            nextKey = initialLoadSize / realPageSize + 1
+        }else{
+            prevKey = currentPage - 1
+            nextKey = if (currentPage <  (movies.total)/(pageSize)) currentPage+1 else null
+        }
+        Log.e("vvitt", "prevKey:$prevKey,nextKey:$nextKey")
+
 
         return try {
             LoadResult.Page(
@@ -50,6 +66,7 @@ class MoviePagingSource : PagingSource<Int,Movie>(){
 
             )
         }catch (e : Throwable){
+            e.printStackTrace()
             LoadResult.Error(e)
         }
 

@@ -3,6 +3,7 @@ package com.vvitt.flowpractice.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.vvitt.flowpractice.databinding.ItemMovieBinding

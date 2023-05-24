@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import com.vvitt.flowpractice.adapter.MovieAdapter
+import com.vvitt.flowpractice.adapter.MovieLoadMoreAdapter
 import com.vvitt.flowpractice.databinding.FragmentPagingBinding
 import com.vvitt.flowpractice.viewmodel.MovieViewModel
 import kotlinx.coroutines.flow.collect
@@ -44,10 +46,20 @@ class PagingFragment : Fragment() {
             val movieAdapter = MovieAdapter(it)
             mBinding.apply {
                 rvPaging.adapter = movieAdapter
+                    .withLoadStateFooter(MovieLoadMoreAdapter(it))
+                srfresh.setOnRefreshListener {
+                    movieAdapter.refresh()
+                }
             }
             lifecycleScope.launchWhenCreated {
                 viewmodel.loadMovie().collectLatest { pagingData ->
                     movieAdapter.submitData(pagingData)
+                }
+            }
+
+            lifecycleScope.launchWhenCreated {
+                movieAdapter.loadStateFlow.collectLatest { state ->
+                    mBinding.srfresh.isRefreshing = state.refresh is LoadState.Loading
                 }
             }
         }
