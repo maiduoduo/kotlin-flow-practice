@@ -3,10 +3,14 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 
+    //整体应用
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
     compileSdk 31
+
 
     defaultConfig {
         applicationId "com.vvitt.flowpractice"
@@ -36,14 +40,16 @@ android {
     //viewbinding
     buildFeatures {
         viewBinding = true
-    }
-    //databinding
-    dataBinding{
-        enabled = true
+        dataBinding = true
     }
 
-    compileSdkVersion 31
-    buildToolsVersion '31'
+    //databinding
+    //compileSdkVersion 31
+    // buildToolsVersion '31'
+//    dataBinding{
+//        enabled = true
+//    }
+
 }
 
 dependencies {
@@ -103,6 +109,17 @@ dependencies {
 
     //图片
     implementation "com.squareup.picasso:picasso:2.71828"
+
+
+    //hilt-dagger
+    implementation "io.coil-kt:coil:1.1.0"
+    implementation "androidx.startup:startup-runtime:1.0.0"
+    def hilt_version = "2.28-alpha"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    def hilt_view_version = "1.0.0-alpha01"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_view_version"
 
 
 

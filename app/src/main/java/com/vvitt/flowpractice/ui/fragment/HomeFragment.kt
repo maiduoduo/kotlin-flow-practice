@@ -56,6 +56,10 @@ class HomeFragment : Fragment() {
             btnPaging.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_pagingFragment)
             }
+
+            btnHilt.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_carFragment)
+            }
         }
     }
 

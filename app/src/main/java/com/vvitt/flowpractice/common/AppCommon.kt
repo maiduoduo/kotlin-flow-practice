@@ -14,6 +14,9 @@ class AppCommon {
     private val str1= "1234"
     // kotlin中没有int，也没有Integer，只有Int，需要默认给 0
     private var num2 = 0
+    //常用api
+    //
+    private val api1 = "https://www.kuaikanmanhua.com/v1/search/by_tag?since=6&count=8&f=3&tag=0&sort=1&query_category={%22update_status%22:1}"
     companion object {
         val num3 = 10
         val str1 = "str"
