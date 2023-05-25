@@ -1,9 +1,12 @@
 package com.vvitt.flowpractice.paging3
 
 import android.util.Log
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingSource
-import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_INITIAL_PAGE_SIZE
-import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_PAGE_SIZE
+import androidx.paging.PagingState
+import com.vvitt.flowpractice.common.BASE_URL
+import com.vvitt.flowpractice.common.PAGING_INITIAL_PAGE_SIZE
+import com.vvitt.flowpractice.common.PAGING_PAGE_SIZE
 import com.vvitt.flowpractice.model.Movie
 import com.vvitt.flowpractice.net.MovieApi
 import com.vvitt.flowpractice.net.RetrofitClient2
@@ -34,7 +37,7 @@ class MoviePagingSource : PagingSource<Int,Movie>(){
         delay(1200)
         val currentPage = params.key?: 1
         val pageSize = params.loadSize
-        val movies = RetrofitClient2.createApi(MovieApi::class.java)
+        val movies = RetrofitClient2.createApi(MovieApi::class.java, BASE_URL)
             .getMovies(currentPage,pageSize)
 
         var prevKey : Int? = null
@@ -71,5 +74,10 @@ class MoviePagingSource : PagingSource<Int,Movie>(){
         }
 
     }
+
+//    @ExperimentalPagingApi
+//    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+//        TODO("Not yet implemented")
+//    }
 }
 

@@ -6,8 +6,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_INITIAL_PAGE_SIZE
-import com.vvitt.flowpractice.common.AppCommon.Companion.PAGING_PAGE_SIZE
+import com.vvitt.flowpractice.common.PAGING_INITIAL_PAGE_SIZE
+import com.vvitt.flowpractice.common.PAGING_PAGE_SIZE
 import com.vvitt.flowpractice.model.Movie
 import com.vvitt.flowpractice.paging3.MoviePagingSource
 import kotlinx.coroutines.flow.Flow

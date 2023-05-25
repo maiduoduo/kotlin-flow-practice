@@ -13,4 +13,6 @@
     <color name="colorPrimary">#779121</color>
     <color name="colorPrimaryDark">#FF03DAC5</color>
     <color name="colorAccent">#FF6200EE</color>
+
+    <color name="recycle_item_press">#9FB6B6B6</color>
 </resources>

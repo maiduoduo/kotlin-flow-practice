@@ -28,9 +28,6 @@
         <action
             android:id="@+id/action_homeFragment_to_pagingFragment"
             app:destination="@id/pagingFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_carFragment"
-            app:destination="@id/carFragment" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
@@ -62,9 +59,4 @@
         android:name="com.vvitt.flowpractice.ui.fragment.PagingFragment"
         android:label="fragment_paging"
         tools:layout="@layout/fragment_paging" />
-    <fragment
-        android:id="@+id/carFragment"
-        android:name="com.vvitt.whole.ui.fragment.CarFragment"
-        android:label="fragment_car"
-        tools:layout="@layout/fragment_car" />
 </navigation>

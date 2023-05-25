@@ -12,7 +12,6 @@ import com.vvitt.flowpractice.adapter.MovieAdapter
 import com.vvitt.flowpractice.adapter.MovieLoadMoreAdapter
 import com.vvitt.flowpractice.databinding.FragmentPagingBinding
 import com.vvitt.flowpractice.viewmodel.MovieViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 
 

@@ -4,4 +4,7 @@
     <string name="hello_download_fragment">Hello blank fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="footer_retry">重试</string>
+    <string name="sharp_label">#</string>
 </resources>

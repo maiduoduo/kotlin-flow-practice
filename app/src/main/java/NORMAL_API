@@ -28,3 +28,16 @@ https://m.kuaikanmanhua.com/v2/mweb/comic/65709 移动端获取章节
 http://m.kuaikanmanhua.com/search/mini/hot_word?&page=1&size=10 // 获取搜索热词
 http://m.kuaikanmanhua.com/search/mini/topic/title_and_author?page=1&size=20&q=%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86 移动端搜索
 
+
+
+https://movie.douban.com/j/search_subjects?type=movie&tag=%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86&page_limit=50&page_start=0
+
+https://movie.douban.com/j/search_subjects?type=movie&tag=%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86&start=0&count=8
+
+https://movie.douban.com/j/search_subjects?type=movie&tag=%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86&start=0&count=8
+
+
+https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=100
+
+
+
