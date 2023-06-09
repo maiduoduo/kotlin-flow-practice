@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.vvitt.flowpractice.databinding.FragmentMviBinding
@@ -74,11 +75,12 @@ class MVIFragment : Fragment() {
 
         //RecyclerView配置
         //避免RecyclerView重新计算大小
-        val layoutManager = StaggeredGridLayoutManager(spanCountMore, StaggeredGridLayoutManager.VERTICAL)
+//        val layoutManager = StaggeredGridLayoutManager(spanCountMore, StaggeredGridLayoutManager.VERTICAL)
         //避免滑动加载时跳动
-        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
-        mBinding.rvGallery.layoutManager = layoutManager
-        mBinding.rvGallery.addItemDecoration(SpaceItemDecoration(spanSize)) //设置间距
+//        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
+//        mBinding.rvGallery.layoutManager = layoutManager
+        mBinding.rvGallery.layoutManager = GridLayoutManager(context,spanCountMore)
+//        mBinding.rvGallery.addItemDecoration(SpaceItemDecoration(spanSize)) //设置间距
         mBinding.rvGallery.setHasFixedSize(true)
         mBinding.rvGallery.adapter = adapter
 
