@@ -57,6 +57,10 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_homeFragment_to_pagingFragment)
             }
 
+            btnMvi.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_MVIFragment)
+            }
+
 
         }
     }
